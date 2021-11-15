@@ -52,7 +52,7 @@ namespace Oprea_Oana_lab5
             ctx.Customers.Load();
 
             inventoryVSource =
-            ((System.Windows.Data.CollectionViewSource)(this.FindResource("invenroryViewSource")));
+            ((System.Windows.Data.CollectionViewSource)(this.FindResource("inventoryViewSource")));
             inventoryVSource.Source = ctx.Inventories.Local;
             ctx.Inventories.Load();
 
@@ -80,12 +80,12 @@ namespace Oprea_Oana_lab5
             action = ActionState.New;
         }
 
-        private void btnEditO_Click(object sender, RoutedEventArgs e)
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
             action = ActionState.Edit;
         }
 
-        private void btnDeleteO_Click(object sender, RoutedEventArgs e)
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
             action = ActionState.Delete;
         }
@@ -278,6 +278,7 @@ namespace Oprea_Oana_lab5
                     SaveInventory();
                     break;
                 case "Orders":
+                    SaveOrders();
                     break;
 
 

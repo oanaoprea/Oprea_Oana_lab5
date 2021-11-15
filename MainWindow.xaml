@@ -13,7 +13,7 @@
         <CollectionViewSource x:Key="customerOrdersViewSource" Source="{Binding Orders, Source={StaticResource customerViewSource}}"/>
     </Window.Resources>
     <Grid>
-        <TabControl HorizontalAlignment="Left" Height="353" Margin="186,35,0,0" VerticalAlignment="Top" Width="597" AutomationProperties.Name="tbCtrlAutoLot">
+        <TabControl HorizontalAlignment="Left" Height="353" Margin="186,35,0,0" VerticalAlignment="Top" Width="597" x:Name="tbCtrlAutoLot">
             <TabItem Header="Customers">
                 <Grid Background="#FFE5E5E5" DataContext="{StaticResource customerViewSource}" HorizontalAlignment="Right" Margin="0,0,-0.333,19.667" Width="581">
 
@@ -81,7 +81,7 @@
             </TabItem>
             <TabItem Header="Orders">
                 <Grid Background="#FFE5E5E5" DataContext="{StaticResource customerOrdersViewSource}">
-                    <ComboBox x:Name="cmbCustomers" HorizontalAlignment="Left" Margin="62,59,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.033,0.5" SelectionChanged="cmbCustomers_SelectionChanged" SelectedValue="{Binding ElementName=ordersDataGrid,Path=SelectedItem.CustId,Mode=OneWay}">
+                    <ComboBox x:Name="cmbCustomers" HorizontalAlignment="Left" Margin="62,59,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.033,0.5" SelectedValue="{Binding ElementName=ordersDataGrid,Path=SelectedItem.CustId,Mode=OneWay}">
                         <ComboBox.ItemTemplate> 
                         <DataTemplate> 
                             <TextBlock> 
@@ -97,7 +97,7 @@
                     </ComboBox>
 
 
-                    <ComboBox x:Name="cmbInventory" HorizontalAlignment="Left" Margin="372,59,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cmbInventory_SelectionChanged" SelectedValue="{Binding ElementName=ordersDataGrid,Path=SelectedItem.CarId,Mode=OneWay}">
+                    <ComboBox x:Name="cmbInventory" HorizontalAlignment="Left" Margin="372,59,0,0" VerticalAlignment="Top" Width="120"  SelectedValue="{Binding ElementName=ordersDataGrid,Path=SelectedItem.CarId,Mode=OneWay}">
 
 
                         <ComboBox.ItemTemplate>
@@ -129,7 +129,7 @@
         <GroupBox x:Name="gbOperations" Header="" Button.Click="gbOperations_Click" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100"  Margin="10,68,0,0">
             <StackPanel x:Name="spOperations" >
                 <Button Content="Add" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="75" x:Name="btnAdd" Click="btnAdd_Click"/>
-                <Button Content="Edit" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="75" Name="btnEdit" Click="btnEditO_Click"/>
+                <Button Content="Edit" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="75" Name="btnEdit" Click="btnEdit_Click"/>
                 <Button Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Name="btnDelete" Click="btnDelete_Click"/>
             </StackPanel>
         </GroupBox>
